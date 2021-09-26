@@ -1,0 +1,17 @@
+@startuml
+
+class Customer
+
+class Invoice
+
+class Product
+
+class LineItem
+
+Customer <-l-- Invoice
+
+Invoice "1" <-l-- "*" LineItem
+
+LineItem "*" -l--> "1" Product
+
+@enduml
