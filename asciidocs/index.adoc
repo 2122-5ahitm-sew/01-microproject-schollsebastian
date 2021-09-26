@@ -1,5 +1,7 @@
 = Fakturierung
 
+Mit dem Projekt soll die Verwaltung von Produken, Kunden und Rechnungen realisiert werden.
+
 == Klassendiagramm
 
 [plantuml, cld, png, align=left]
