@@ -1,17 +1,53 @@
 @startuml
 
-class Customer
+class Customer {
+  + firstName: String
+  + lastName: String
+  + street: String
+  + houseNumber: int
+  + zip: int
+  + city: String
 
-class Invoice
+  + Customer()
+  + Customer(String firstName, String lastName, String street, int houseNumber, int zip, String city)
 
-class Product
+  + toString(): String
+}
 
-class LineItem
+class Invoice {
+  + customer: Customer
+
+  + Invoice()
+  + Invoice(Customer customer)
+
+  + toString(): String
+}
+
+class Product {
+  + name: String
+  + price: double
+
+  + Product()
+  + Product(String name, double price)
+
+  + toString(): String
+}
+
+class LineItem {
+  + product: Product
+  + invoice: Invoice
+  + amount: int
+
+  + LineItem()
+  + LineItem(Product product, int amount, Invoice invoice)
+
+  + toString(): String
+}
 
 Customer <-l-- Invoice
 
-Invoice "1" <-l-- "*" LineItem
+Invoice "1" <--- "*" LineItem
 
-LineItem "*" -l--> "1" Product
+LineItem "*" -r--> "1" Product
 
 @enduml
