@@ -1,0 +1,53 @@
+@startuml
+
+class Customer {
+  + firstName: String
+  + lastName: String
+  + street: String
+  + houseNumber: int
+  + zip: int
+  + city: String
+
+  + Customer()
+  + Customer(String firstName, String lastName, String street, int houseNumber, int zip, String city)
+
+  + toString(): String
+}
+
+class Invoice {
+  + customer: Customer
+
+  + Invoice()
+  + Invoice(Customer customer)
+
+  + toString(): String
+}
+
+class Product {
+  + name: String
+  + price: double
+
+  + Product()
+  + Product(String name, double price)
+
+  + toString(): String
+}
+
+class LineItem {
+  + product: Product
+  + invoice: Invoice
+  + amount: int
+
+  + LineItem()
+  + LineItem(Product product, int amount, Invoice invoice)
+
+  + toString(): String
+}
+
+Customer <-d-- Invoice
+
+Invoice "1" <-r-- "*" LineItem
+
+LineItem "*" -u--> "1" Product
+
+@enduml
