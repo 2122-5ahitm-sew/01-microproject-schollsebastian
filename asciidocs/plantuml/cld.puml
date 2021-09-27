@@ -44,10 +44,10 @@ class LineItem {
   + toString(): String
 }
 
-Customer <-l-- Invoice
+Customer <-d-- Invoice
 
-Invoice "1" <--- "*" LineItem
+Invoice "1" <-r-- "*" LineItem
 
-LineItem "*" -r--> "1" Product
+LineItem "*" -u--> "1" Product
 
 @enduml
