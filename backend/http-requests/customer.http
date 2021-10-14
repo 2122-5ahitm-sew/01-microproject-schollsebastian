@@ -1,0 +1,39 @@
+### getAll
+
+GET http://localhost:8080/customer
+
+### get
+
+GET http://localhost:8080/customer/1
+
+### post
+
+POST http://localhost:8080/customer
+Content-Type: application/json
+
+{
+  "firstName": "Jonas",
+  "lastName": "Dorfinger",
+  "street": "Rosenweg",
+  "houseNumber": 10,
+  "zip": 4200,
+  "city": "Schwanenstadt"
+}
+
+### put
+
+PUT http://localhost:8080/customer/1
+Content-Type: application/json
+
+{
+  "firstName": "Lukas",
+  "lastName": "Starka",
+  "street": "Straßenstraße",
+  "houseNumber": 20,
+  "zip": 4040,
+  "city": "Lienz"
+}
+
+### delete
+
+DELETE http://localhost:8080/customer/1
